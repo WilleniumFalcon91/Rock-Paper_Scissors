@@ -1,19 +1,19 @@
 function rockPaperScissors (a, b) {
     var moves = {
         "rock": {
-            "rock": "tie with",
+            "rock": "ties with",
             "paper": "loses to",
             "scissors": "beats"
         }, 
         "paper":  {          
             "rock": "beats",
-            "paper": "tie with",
+            "paper": "ties with",
             "scissors": "loses to"
         },
         "scissors":  {          
             "rock": "loses to",
             "paper": "beats",
-            "scissors": "tie with"
+            "scissors": "ties with"
         }
     }
    var result = a + " " + moves[a][b] + " " + b + "!";
@@ -27,6 +27,15 @@ function rockPaperScissors (a, b) {
      }
    }
    return result
+}
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+var computerMoves = ["rock", "paper", "scissors"];
+
+function playComputer (input) {
+    rockPaperScissors(input, computerMoves[getRandomInt(0, 2)])
 }
 
 rockPaperScissors("rock", "paper")
