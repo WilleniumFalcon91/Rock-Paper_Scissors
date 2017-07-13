@@ -16,7 +16,17 @@ function rockPaperScissors (a, b) {
             "scissors": "tie with"
         }
     }
-   return a + " " + moves[a][b] + " " + b;
+   var result = a + " " + moves[a][b] + " " + b + "!";
+   for (i = 0; i < result.length; i++) {
+     if (result[i] == "b") {
+       console.log("You win!");
+     } else if (result[i] =="w") {
+       console.log("You tied. Play again!");
+     } else if (result[i] == "l") {
+       console.log("Loser!");
+     }
+   }
+   return result
 }
 
 rockPaperScissors("rock", "paper")
